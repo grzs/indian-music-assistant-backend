@@ -4,7 +4,7 @@ from pymongo.server_api import ServerApi
 import json
 
 
-def connect(user, password, address, app_name):
+def ping_server(user, password, address, app_name):
     uri = f"mongodb+srv://{user}:{password}@{address}/?appName={app_name}"
 
     # Create a new client and connect to the server
@@ -22,4 +22,4 @@ if __name__ == "__main__":
     with open("db-credentials.json") as f:
         credentials = json.load(f)
 
-    connect(app_name="IMT0", **credentials)
+    ping_server(app_name="IMT0", **credentials)
