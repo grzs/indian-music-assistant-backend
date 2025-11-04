@@ -19,7 +19,7 @@ def connect(user, password, address, app_name):
 
 
 if __name__ == "__main__":
-    with open("mongodb.json") as f:
+    with open("db-credentials.json") as f:
         credentials = json.load(f)
 
-    connect(**credentials)
+    connect(app_name="IMT0", **credentials)
