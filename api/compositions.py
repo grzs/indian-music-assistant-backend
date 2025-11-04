@@ -43,7 +43,7 @@ async def read_compositions():
 
 @app.get("/api/v1/compositions/{slug}", response_model=Composition)
 async def read_composition_by_slug(slug: str):
-    composition = await app.mongodb["users"].find_one({"slug": slug})
+    composition = await app.mongodb["compositions"].find_one({"slug": slug})
     if composition is None:
         raise HTTPException(status_code=404, detail="Composition not found")
     return composition
