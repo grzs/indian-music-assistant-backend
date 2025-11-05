@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -8,8 +10,8 @@ app = FastAPI(lifespan=lifespan)
 
 # CORS middleware config
 origins = [
-    "http://localhost",
     "http://localhost:8080",
+    os.environ.get("FRONTEND_URI", "http://localhost"),
 ]
 app.add_middleware(
     CORSMiddleware,
