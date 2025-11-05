@@ -33,34 +33,39 @@ async def get_app_permissions(app):
     }
 
 
-def get_permission_names(permissions: List[Permission]):
-    return [perm.name for perm in permissions]
-
-
 def permission_check(
-    permissions: Dict, user: Dict, record: Dict, collection: str, operation: str
+    app_permissions: Dict,
+    requested_permission: Permission,
+    user: Dict,
+    record: Dict,
+    collection: str,
 ) -> bool:
-    role_permissions = [
-        perm.name for perm in permissions[user["role"]].get(collection, [])
-    ]
-    group_permissions = set.union(
-        *[
-            set(grp.get("permissions", []))
-            for grp in filter(
-                lambda grp: grp.get("name", "") in user.get("groups", []),
-                record["groups"],
-            )
-        ]
-    )
+    """Returns true if:
+    - the user is the owner of the record
+    - the user is a member of a role that has the requested permission over the records collection
+    - the user is a member of a group that has been granted the requested permission on the record
+    """
 
     if any(
         [
             record["owner"] == user["name"],
-            operation in role_permissions,
-            operation in group_permissions,
+            requested_permission in app_permissions[user["role"]].get(collection, []),
         ]
     ):
         return True
+
+    # checking group permissions
+    for group_permission in record["group_permissions"]:
+        if group_permission.get("group", "") not in user.get("groups", []):
+            continue
+        for permission_name in group_permission["permissions"]:
+            try:
+                if Permission[permission_name.upper()] == requested_permission:
+                    return True
+            except KeyError as e:
+                # TODO: log wrong permission name
+                continue
+
     return False
 
 
@@ -78,13 +83,13 @@ document 'foo', because he is part of group 'boo'.
   "document": [{
     "name": "foo",
     "owner" "bar",
-    "groups": [
+    "group_permissions": [
       {
-        "name": "baz",
+        "group": "baz",
         "permissions": ["read"]
       }
       {
-        "name": "boo",
+        "group": "boo",
         "permissions": ["read", "update", "delete"]
       }
     ]
