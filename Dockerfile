@@ -16,5 +16,4 @@ RUN --mount=type=cache,target=/var/cache/pip,sharing=locked \
 WORKDIR /opt/imt-backend
 COPY /backend /opt/imt-backend
 
-ENTRYPOINT ["/usr/local/bin/uvicorn"]
-CMD ["main:app"]
+ENTRYPOINT ["/usr/local/bin/uvicorn", "main:app"]
