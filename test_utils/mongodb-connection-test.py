@@ -5,7 +5,7 @@ import json
 
 
 def ping_server(user, password, address, app_name):
-    uri = f"mongodb+srv://{user}:{password}@{address}/?appName={app_name}"
+    uri = f"mongodb+srv://{user}:{password}@{address}/?appName={app_name}&tls=true"
 
     # Create a new client and connect to the server
     client = MongoClient(uri, server_api=ServerApi("1"))

@@ -12,9 +12,15 @@ def get_connection_string():
     with open(creds_file) as f:
         credentials = json.load(f)
 
-    return "mongodb+srv://{user}:{password}@{address}/?appName={app_name}".format(
-        **credentials
+    tls = os.environ.get("DB_TLS", "true")
+    connection_string = "mongodb+srv://{user}:{password}@{address}/?appName={app_name}&tls={tls}".format(
+        **credentials,
+        tls=tls,
     )
+    if ca_file := os.environ.get("DB_TLS_CA_FILE"):
+        connection_string += f"&tlsCAFile={ca_file}"
+
+    return connection_string
 
 
 async def startup_db_client(app):

@@ -5,7 +5,7 @@ from pymongo.server_api import ServerApi
 
 
 async def ping_server(user, password, address, app_name):
-    uri = f"mongodb+srv://{user}:{password}@{address}/?appName={app_name}"
+    uri = f"mongodb+srv://{user}:{password}@{address}/?appName={app_name}&tls=true"
 
     # Set the Stable API version when creating a new client
     client = AsyncIOMotorClient(uri, server_api=ServerApi("1"))

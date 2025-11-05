@@ -18,10 +18,12 @@ with a structure like this:
 
 ## Environment variables
 
-| name                  | default value          | description                       |
-|-----------------------|------------------------|-----------------------------------|
-| `DB_CREDENTIALS_JSON` | `.db-credentials.json` | file contaning database secrets   |
-| `FRONTEND_URI`        | `http://localhost`     | URI added to CORS allowed origins |
+| name                  | default value          | description                                    |
+|-----------------------|------------------------|------------------------------------------------|
+| `DB_CREDENTIALS_JSON` | `.db-credentials.json` | file contaning database secrets                |
+| `DB_TLS`              | `true`                 | db connection TLS                              |
+| `DB_TLS_CA_FILE`      |                        | if set, CA file will be used fro db connection |
+| `FRONTEND_URI`        | `http://localhost`     | URI added to CORS allowed origins              |
 
 ## Build Docker image
 
