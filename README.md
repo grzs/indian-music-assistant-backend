@@ -23,3 +23,6 @@ with a structure like this:
 | `DB_CREDENTIALS_JSON` | `.db-credentials.json` | file contaning database secrets   |
 | `FRONTEND_URI`        | `http://localhost`     | URI added to CORS allowed origins |
 
+## Build Docker image
+
+`docker build . -t imt-backend`

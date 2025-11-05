@@ -1,0 +1,7 @@
+/backend/.db-credentials.json
+
+# python cache
+**/__pycache__/
+
+# emacs tmp files
+**/*~
