@@ -19,7 +19,7 @@ def ping_server(user, password, address, app_name):
 
 
 if __name__ == "__main__":
-    with open("db-credentials.json") as f:
+    with open(".db-credentials.json") as f:
         credentials = json.load(f)
 
-    ping_server(app_name="IMT0", **credentials)
+    ping_server(**credentials)

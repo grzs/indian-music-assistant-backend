@@ -19,7 +19,7 @@ async def ping_server(user, password, address, app_name):
 
 
 if __name__ == "__main__":
-    with open("db-credentials.json") as f:
+    with open(".db-credentials.json") as f:
         credentials = json.load(f)
 
-    asyncio.run(ping_server(app_name="IMT0", **credentials))
+    asyncio.run(ping_server(**credentials))

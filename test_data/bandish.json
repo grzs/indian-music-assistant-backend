@@ -1,1 +1,135 @@
-[[["A","P","/"],["-","m","-"],["nan","G","-"],["-","-","c"],["di","G","\\"],["-","R","-"],["Ja","S","/"],["ga","N","\\"],["-","D","-"],["Ban","N","/"],["-","R","-"],["di","S","\\"]],[["Tri","S","/"],["pu","S","/"],["ra","S","\\"],["Sun","(R)N","/"],["-","-","-"],["da","R","-"],["ri","S","/"],["-","-","c"],["Ma","S","/"],["-","-","c"],["ta","S","\\"],["-","-","c"]]]
+{
+  "slug": "anandi-jagabandi",
+  "lines": [
+    {
+      "matras": [
+        {
+          "syllable": "A",
+          "sargam": "P",
+          "bol": "/"
+        },
+        {
+          "syllable": "-",
+          "sargam": "m",
+          "bol": "-"
+        },
+        {
+          "syllable": "nan",
+          "sargam": "G",
+          "bol": "-"
+        },
+        {
+          "syllable": "-",
+          "sargam": "-",
+          "bol": "c"
+        },
+        {
+          "syllable": "di",
+          "sargam": "G",
+          "bol": "\\"
+        },
+        {
+          "syllable": "-",
+          "sargam": "R",
+          "bol": "-"
+        },
+        {
+          "syllable": "Ja",
+          "sargam": "S",
+          "bol": "/"
+        },
+        {
+          "syllable": "ga",
+          "sargam": "N",
+          "bol": "\\"
+        },
+        {
+          "syllable": "-",
+          "sargam": "D",
+          "bol": "-"
+        },
+        {
+          "syllable": "Ban",
+          "sargam": "N",
+          "bol": "/"
+        },
+        {
+          "syllable": "-",
+          "sargam": "R",
+          "bol": "-"
+        },
+        {
+          "syllable": "di",
+          "sargam": "S",
+          "bol": "\\"
+        }
+      ],
+      "section": ""
+    },
+    {
+      "matras": [
+        {
+          "syllable": "Tri",
+          "sargam": "S",
+          "bol": "/"
+        },
+        {
+          "syllable": "pu",
+          "sargam": "S",
+          "bol": "/"
+        },
+        {
+          "syllable": "ra",
+          "sargam": "S",
+          "bol": "\\"
+        },
+        {
+          "syllable": "Sun",
+          "sargam": "(R)N",
+          "bol": "/"
+        },
+        {
+          "syllable": "-",
+          "sargam": "-",
+          "bol": "-"
+        },
+        {
+          "syllable": "da",
+          "sargam": "R",
+          "bol": "-"
+        },
+        {
+          "syllable": "ri",
+          "sargam": "S",
+          "bol": "/"
+        },
+        {
+          "syllable": "-",
+          "sargam": "-",
+          "bol": "c"
+        },
+        {
+          "syllable": "Ma",
+          "sargam": "S",
+          "bol": "/"
+        },
+        {
+          "syllable": "-",
+          "sargam": "-",
+          "bol": "c"
+        },
+        {
+          "syllable": "ta",
+          "sargam": "S",
+          "bol": "\\"
+        },
+        {
+          "syllable": "-",
+          "sargam": "-",
+          "bol": "c"
+        }
+      ],
+      "section": ""
+    }
+  ]
+}
