@@ -1,4 +1,4 @@
-from typing import List, Dict
+from typing import Dict
 from enum import Enum, auto
 
 
@@ -46,12 +46,8 @@ def permission_check(
     - the user is a member of a group that has been granted the requested permission on the record
     """
 
-    if any(
-        [
-            record["owner"] == user["name"],
-            requested_permission in app_permissions[user["role"]].get(collection, []),
-        ]
-    ):
+    role_permissions = app_permissions[user["role"]].get(collection, [])
+    if record["owner"] == user["name"] or requested_permission in role_permissions:
         return True
 
     # checking group permissions
@@ -63,8 +59,7 @@ def permission_check(
                 if Permission[permission_name.upper()] == requested_permission:
                     return True
             except KeyError as e:
-                # TODO: log wrong permission name
-                continue
+                print(e)  # TODO: log instead of print
 
     return False
 
