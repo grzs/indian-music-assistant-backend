@@ -5,6 +5,8 @@ from fastapi import FastAPI
 from motor.motor_asyncio import AsyncIOMotorClient
 from contextlib import asynccontextmanager
 
+from permissions import get_app_permissions
+
 
 def get_connection_string():
     creds_file = os.environ.get("DB_CREDENTIALS_JSON", ".db-credentials.json")
@@ -26,6 +28,7 @@ def get_connection_string():
 async def startup_db_client(app):
     app.mongodb_client = AsyncIOMotorClient(get_connection_string())
     app.mongodb = app.mongodb_client.get_database("imt")
+    await get_app_permissions(app)
     print("MongoDB connected.")
 
 
