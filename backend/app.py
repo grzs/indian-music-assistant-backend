@@ -10,7 +10,7 @@ app = FastAPI(lifespan=lifespan)
 
 # CORS middleware config
 origins = [
-    "http://localhost:8080",
+    "http://localhost:5173",
     os.environ.get("FRONTEND_URI", "http://localhost"),
 ]
 app.add_middleware(
