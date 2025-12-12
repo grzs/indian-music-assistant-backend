@@ -2,6 +2,17 @@
 
 Built with FastAPI.
 
+## Secret key
+
+We need a secret key to create and verify password hashes against.
+It can be done with openssl:
+
+```
+openssl rand -hex 32
+```
+
+The generated key should be treated as secret.
+
 ## Configuration
 
 The database credentials are read from a file specified in env var `DB_CREDENTIALS_JSON`,

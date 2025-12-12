@@ -8,3 +8,4 @@ __pycache__/
 
 # other
 .db-credentials.json
+/backend/.secrets/
